@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Articles from './Articles';
 import OneArticle from './OneArticle';
+import '@Styles/container/article.scss';
 
 const BoardBodySection = () => {
     const [viewAll, setViewMode] = useState(true);
@@ -10,7 +11,7 @@ const BoardBodySection = () => {
         <>
             <div className='wrap title'>
                 <h1>
-                    <a href='/370440'>자유게시판</a>
+                    <a href='/'>자유게시판</a>
                 </h1>
                 <hr />
             </div>
