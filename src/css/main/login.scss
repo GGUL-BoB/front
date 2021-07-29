@@ -75,6 +75,21 @@ body {
     color: #444444;
     font-size: 13px;
 }
+#container p.forgot {
+    clear: both;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+
+    div {
+        font-size: 15px;
+        line-height: 2;
+        background-color: bisque;
+    }
+}
+
 #container p.register {
     clear: both;
     padding-top: 30px;

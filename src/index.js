@@ -1,10 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import '@Styles/common.scss';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
-// import CommunityPage from '@Pages/CommunityPage';
-// import LoginPage from '@Pages/LoginPage';
-// import RegisterPage from '@Pages/RegisterPage';
+import '@Styles/index.scss';
 
 const CommunityPage = lazy(() => import('@Pages/CommunityPage'));
 const LoginPage = lazy(() => import('@Pages/LoginPage'));

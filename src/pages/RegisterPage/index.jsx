@@ -1,60 +1,54 @@
 import '@Styles/register.scss';
 
-const RegisterPage = () => {
-    return (
-        <form id='container' method='post' action='/register/agreement'>
-            <h2>밥브리타임 회원가입</h2>
-            <p class='description'>
-                밥브리타임 계정으로
-                <strong> 다양한 BoB 관련 정보</strong>를 <br />
-                모두 이용하실 수 있습니다.
-            </p>
-            <div class='input'>
-                <div class='label'>
-                    <label>트랙</label>
-                </div>
-                <select name='enter_year'>
-                    <option disabled='' selected=''>
-                        트랙 선택
-                    </option>
-                    <option value='2021'>2021학번</option>
-                    <option value='2020'>2020학번</option>
-                    <option value='2019'>2019학번</option>
-                    <option value='2018'>2018학번</option>
-                </select>
-            </div>
+import RegisterFormInfo from '@Components/Register/RegisterFormInfo';
+import OptionComponent from '@Components/Register/OptionComponent';
+import InputComponent from '@Components/Register/InputComponent';
 
-            <div class='input'>
-                <div class='label'>
-                    <label>아이디</label>
-                </div>
-                <input type='text' name='id' maxlength='20' placeholder='아이디를 입력하세요.' autocomplete='off' />
-            </div>
-            <div class='input'>
-                <div class='label'>
-                    <label>비밀번호</label>
-                </div>
-                <input
-                    type='password'
-                    name='password'
-                    maxlength='20'
-                    placeholder='비밀번호를 입력하세요.'
-                    autocomplete='off'
-                />
-            </div>
-            <div class='input'>
-                <div class='label'>
-                    <label>비밀번호 확인</label>
-                </div>
-                <input
-                    type='password'
-                    name='password'
-                    maxlength='20'
-                    placeholder='비밀번호를 다시 입력하세요.'
-                    autocomplete='off'
-                />
-            </div>
-            <input type='submit' value='제출' />
+const RegisterPage = () => {
+    const trackList = [
+        { name: '디지털포렌식', value: 'Digital forensic' },
+        { name: '보안제품개발', value: 'Security product development' },
+        { name: '보안 컨설팅', value: 'Security consulting' },
+        { name: '취약점 분석', value: 'Vulnerability analysis' },
+    ];
+
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        const isPasswordValid = e.target.password.value === e.target.chk.value;
+        const isTrackValid = e.target.track.value !== 'none';
+
+        if (!isTrackValid) {
+            alert('트랙을 골라주세요.');
+            return;
+        }
+
+        if (!isPasswordValid) {
+            alert('비밀번호가 일치하지 않습니다.');
+            return;
+        }
+
+        console.log({
+            track: e.target.track.value,
+            id: e.target.id.value,
+            pw: e.target.password.value,
+        });
+        // TODO :: Hook 이랑 연결 + 인증 관련 처리
+    };
+
+    return (
+        <form id='container' onSubmit={handleSubmit}>
+            <RegisterFormInfo />
+
+            <OptionComponent title='트랙' dataType='track' defaultOption='트랙 선택' optionList={trackList} />
+
+            <InputComponent title='아이디' dataType='id' placeholder='아이디를 입력하세요.' />
+
+            <InputComponent title='비밀번호' dataType='password' placeholder='비밀번호를 입력하세요.' isBlind />
+
+            <InputComponent title='비밀번호 확인' dataType='chk' placeholder='비밀번호를 다시 입력하세요.' isBlind />
+
+            <input type='submit' value='제출' style={{ cursor: 'pointer' }} />
         </form>
     );
 };
