@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ArticleWriteForm from './ArticleWriteForm';
 import ArticleWritePlaceHolder from './ArticleWritePlaceHolder';
-import DummyArticles from '../../../dummy/ArticleDummy.jsx';
+import ArticleList from './ArticleList';
 
 const Articles = ({ setViewMode }) => {
     const [writeMode, setWriteMode] = useState(false);
@@ -10,7 +10,7 @@ const Articles = ({ setViewMode }) => {
         <div className='wrap articles'>
             {writeMode ? <ArticleWriteForm /> : <ArticleWritePlaceHolder setWriteMode={setWriteMode} />}
 
-            <DummyArticles setViewMode={setViewMode} />
+            <ArticleList setViewMode={setViewMode} />
             <div className='clearBothOnly'></div>
 
             <div className='pagination'>

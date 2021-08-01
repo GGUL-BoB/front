@@ -117,7 +117,7 @@ body.appwebview nav {
 #submenu > div.wrap > div.divider {
     display: inline-block;
     width: 1px;
-    height: 100px;
+    height: 50px;
     background-color: #e3e3e3;
 }
 #submenu > div.wrap > div.group {
@@ -715,7 +715,9 @@ aside > div.title > ol.buttons > li > a.image.setting {
         display: block;
         width: 56px;
         height: 50px;
-        background: #fff url('https://everytime.kr/images/new/aside.title.hamburger.png') no-repeat center center;
+        background: #fff
+            url('https://media.discordapp.net/attachments/802076592825827332/869027652672049162/tempBoBAI.png')
+            no-repeat center center;
         background-size: 18px 18px;
     }
     aside > div.title > h1 {

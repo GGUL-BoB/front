@@ -5,7 +5,7 @@ const AsideComponent = () => {
 
     return (
         <aside className='none'>
-            <form className={searchFormClassName}>
+            {/* <form className={searchFormClassName}>
                 <input
                     type='search'
                     name='keyword'
@@ -13,9 +13,9 @@ const AsideComponent = () => {
                     placeholder='전체 게시판의 글을 검색하세요!'
                     onBlur={() => setFormVisible('search')}
                 />
-            </form>
+            </form> */}
             <div className='title'>
-                <a className='hamburger'></a>
+                <a className='hamburger' href='/main'></a>
                 <h1>보안제품개발 트랙 밥브리타임</h1>
                 <ol class='buttons'>
                     <li onClick={() => setFormVisible('search visible')}>

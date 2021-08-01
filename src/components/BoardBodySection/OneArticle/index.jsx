@@ -32,20 +32,20 @@ const OneArticle = () => {
                     <input type='hidden' name='201157140_comment_anonym' value='0' />
                 </a>
                 <div class='comments' style={{ display: 'block' }}>
-                    {/* <article class='parent'>
+                    <article class='parent'>
                         <img src='https://cf-fpi.everytime.kr/0.png' class='picture medium' />
                         <h3 class='medium'>익명1</h3>
                         <ul class='status'>
                             <li class='childcomment'>대댓글</li>
                             <li class='commentvote'>공감</li>
-                            <li
+                            {/* <li
                                 class='messagesend'
                                 data-modal='messageSend'
                                 data-comment-id='956755462'
                                 data-is-anonym='1'
                             >
                                 쪽지
-                            </li>
+                            </li> */}
                             <li class='abuse'>신고</li>
                         </ul>
                         <hr />
@@ -62,14 +62,14 @@ const OneArticle = () => {
                         <h3 class='medium writer'>익명(글쓴이)</h3>
                         <ul class='status'>
                             <li class='commentvote'>공감</li>
-                            <li
+                            {/* <li
                                 class='messagesend'
                                 data-modal='messageSend'
                                 data-comment-id='956756014'
                                 data-is-anonym='1'
                             >
                                 쪽지
-                            </li>
+                            </li> */}
                             <li class='abuse'>신고</li>
                         </ul>
                         <hr />
@@ -80,7 +80,7 @@ const OneArticle = () => {
                                 0
                             </li>
                         </ul>
-                    </article> */}
+                    </article>
                     <form class='writecomment'>
                         <input
                             type='text'

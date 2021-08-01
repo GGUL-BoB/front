@@ -1,4 +1,4 @@
-import GlobalHeader from '@Components/nav';
+import GlobalHeader from '@Components/GlobalHeader';
 import GlobalSubMenu from '@Components/GlobalSubMenu';
 import GlobalFooter from '@Components/GlobalFooter';
 import RightSection from '@Components/RightSection';

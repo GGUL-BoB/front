@@ -1,70 +1,18 @@
+import boardTotalList from './boardData';
+import BoardGroup from './BoardGroup';
+
 const GlobalSubMenu = () => {
+    const [list1, list2, list3, list4] = boardTotalList.map(({ key, value }) => value);
+    // TODO :: 게시판 별 ID에 따른 라우팅 + isNew 처리
+
     return (
         <div className='wrap'>
-            <BoardGroup />
-            <BoardGroup />
-            <BoardGroup />
-            <BoardGroup />
-            <BoardGroup />
+            <BoardGroup boardList={list1} />
+            <BoardGroup boardList={list2} />
+            <BoardGroup boardList={list3} />
+            <BoardGroup boardList={list4} />
         </div>
     );
-};
-
-const BoardGroup = () => {
-    return (
-        <>
-            <div className='divider' />
-            <div className='group'>
-                <BoardList groupNo='1' />
-            </div>
-        </>
-    );
-};
-
-const BoardList = () => {
-    const item = [
-        {
-            href: '/',
-            boardID: 1,
-            isNew: true,
-            title: '자유게시판',
-        },
-        {
-            href: '/',
-            boardID: 2,
-            isNew: false,
-            title: '비밀게시판',
-        },
-        {
-            href: '/',
-            boardID: 3,
-            isNew: true,
-            title: '자료게시판',
-        },
-        {
-            href: '/',
-            boardID: 4,
-            isNew: true,
-            title: '트랙 별 게시판',
-        },
-    ];
-
-    const boardItems = item.map(elem => {
-        const { href: link, boardID, title, isNew } = elem;
-
-        return (
-            <ul>
-                <li>
-                    {' '}
-                    <a href={link} data-id={boardID} className={isNew ? 'new' : ''}>
-                        {title}
-                    </a>
-                </li>
-            </ul>
-        );
-    });
-
-    return <>{boardItems}</>;
 };
 
 export default GlobalSubMenu;
