@@ -3,13 +3,13 @@ const boardTotalList = [
         key: 'list1',
         value: [
             {
-                href: '/',
+                href: '/board/1',
                 boardID: 1,
                 isNew: false,
                 title: '자유게시판',
             },
             {
-                href: '/',
+                href: '/board/2',
                 boardID: 2,
                 isNew: false,
                 title: '비밀게시판',
@@ -20,13 +20,13 @@ const boardTotalList = [
         key: 'list2',
         value: [
             {
-                href: '/',
+                href: '/board/3',
                 boardID: 3,
                 isNew: false,
                 title: '자료게시판',
             },
             {
-                href: '/',
+                href: '/board/4',
                 boardID: 4,
                 isNew: false,
                 title: '트랙 별 게시판',

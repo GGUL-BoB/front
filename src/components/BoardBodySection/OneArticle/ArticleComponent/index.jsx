@@ -1,9 +1,12 @@
 const ArticleComponent = props => {
-    const { writer, timestamp, title, content, vote, comment, articleID } = props;
+    const { writer, timestamp, title, content, vote, comment, articleID, setEditmode } = props;
 
     const formattedTime = timestamp;
 
     // TODO :: 수정버튼 누르면 writeForm
+    const handleClickToEdit = () => {
+        setEditmode(p => !p);
+    };
 
     return (
         <a class='article'>
@@ -13,7 +16,9 @@ const ArticleComponent = props => {
                 <time class='large'>{formattedTime}</time>
             </div>
             <ul class='status'>
-                <li class='update'>수정</li>
+                <li class='update' onClick={handleClickToEdit}>
+                    수정
+                </li>
                 <li class='abuse'>신고</li>
             </ul>
             <hr />

@@ -1,7 +1,17 @@
 const BoardArticleComponent = props => {
-    const { title, content, timestamp, isAnony = false, writerNm = 'user', vote, comment, articleID = 0 } = props;
+    const {
+        title,
+        content,
+        timestamp,
+        isAnony = false,
+        writerNm = 'user',
+        vote,
+        comment,
+        articleID = 0,
+        boardID,
+    } = props;
 
-    const href = true ? '/board' : `/board/${articleID}`;
+    const href = false ? `/board/${boardID}` : `/board/${boardID}/v/${articleID}`;
     const writer = isAnony ? '익명' : writerNm;
 
     return (

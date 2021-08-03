@@ -1,4 +1,9 @@
-const Pagenation = () => {
+const Pagenation = props => {
+    const { bid, pageNum } = props;
+
+    const nextPageHref = `/board/${bid}/p/${Number(pageNum) + 1}`;
+    // 이거 20개 단위 offset
+
     return (
         <div className='pagination'>
             <form id='searchArticleForm' className='search'>
@@ -10,7 +15,7 @@ const Pagenation = () => {
                 </select>
                 <input name='keyword' placeholder='검색어를 입력하세요.' className='text' />
             </form>
-            <a href='/370440/p/2' className='next'>
+            <a href={nextPageHref} className='next'>
                 다음
             </a>
         </div>

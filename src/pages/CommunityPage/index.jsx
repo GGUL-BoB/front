@@ -1,3 +1,5 @@
+import { Route } from 'react-router-dom';
+
 import GlobalHeader from '@Components/GlobalHeader';
 import GlobalSubMenu from '@Components/GlobalSubMenu';
 import GlobalFooter from '@Components/GlobalFooter';
@@ -27,7 +29,8 @@ const MainPage = ({ location }) => {
             <div id='container' className={containerClassName}>
                 <RightSection />
                 <AsideComponent />
-                {isBoard ? <BoardBodySection /> : <MainBodySection />}
+                <Route path='/board' component={BoardBodySection} />
+                <Route path='/main' component={MainBodySection} />
                 <hr />
             </div>
 

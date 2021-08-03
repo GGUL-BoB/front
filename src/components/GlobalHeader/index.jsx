@@ -15,7 +15,7 @@ const GlobalHeader = () => {
                 <NavAccountItem title='내 정보' name='icon my' href='/' />
             </div>
             <ul id='menu'>
-                <MenuListItem name='게시판' href='/' />
+                <MenuListItem name='게시판' href='/board/1' />
                 <MenuListItem name='자료실' href='/' />
                 <MenuListItem name='BoB페이지' href='/' />
                 <MenuListItem name='BoB Wiki' href='/' />

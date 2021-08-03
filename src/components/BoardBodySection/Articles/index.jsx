@@ -4,17 +4,19 @@ import ArticleWritePlaceHolder from './ArticleWritePlaceHolder';
 import ArticleList from './ArticleList';
 import Pagenation from './Pagenation';
 
-const Articles = ({ setViewMode }) => {
+const Articles = ({ match }) => {
     const [writeMode, setWriteMode] = useState(false);
+
+    const { bID, page = 1 } = match.params;
 
     return (
         <div className='wrap articles'>
             {writeMode ? <ArticleWriteForm /> : <ArticleWritePlaceHolder setWriteMode={setWriteMode} />}
 
-            <ArticleList setViewMode={setViewMode} />
+            <ArticleList bid={bID} pageNum={page} />
             <div className='clearBothOnly'></div>
 
-            <Pagenation />
+            <Pagenation bid={bID} pageNum={page} />
         </div>
     );
 };

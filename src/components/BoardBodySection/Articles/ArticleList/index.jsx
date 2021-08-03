@@ -1,6 +1,8 @@
 import BoardArticleComponent from './BoardArticleComponent';
 
-const ArticleList = ({ setViewMode }) => {
+const ArticleList = props => {
+    const { bid } = props;
+
     return (
         <>
             <BoardArticleComponent
@@ -10,6 +12,8 @@ const ArticleList = ({ setViewMode }) => {
                 isAnony
                 vote={0}
                 comment={0}
+                boardID={bid}
+                articleID={1}
             />
             <BoardArticleComponent
                 title='다전 복전 부전공'
@@ -19,6 +23,8 @@ const ArticleList = ({ setViewMode }) => {
                 isAnony
                 vote={0}
                 comment={0}
+                boardID={bid}
+                articleID={2}
             />
             <BoardArticleComponent
                 title='제목은 모르겠는데'
@@ -27,6 +33,8 @@ const ArticleList = ({ setViewMode }) => {
                 isAnony
                 vote={0}
                 comment={0}
+                boardID={bid}
+                articleID={3}
             />
             <BoardArticleComponent
                 title='댓글'
@@ -35,6 +43,8 @@ const ArticleList = ({ setViewMode }) => {
                 isAnony
                 vote={0}
                 comment={0}
+                boardID={bid}
+                articleID={4}
             />
         </>
     );
