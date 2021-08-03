@@ -5,7 +5,7 @@ import OneArticle from './OneArticle';
 import '@Styles/container/article.scss';
 
 const BoardBodySection = () => {
-    const [viewAll, setViewMode] = useState(false);
+    const [viewAll, setViewMode] = useState(true);
     // TODO : switch to Router form
     // TODO : 게시판 이름 매개변수
 

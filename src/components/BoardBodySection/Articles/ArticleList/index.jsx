@@ -28,6 +28,14 @@ const ArticleList = ({ setViewMode }) => {
                 vote={0}
                 comment={0}
             />
+            <BoardArticleComponent
+                title='댓글'
+                content='많이 달리는지도 한번 체크해야함'
+                timestamp='10분 전'
+                isAnony
+                vote={0}
+                comment={0}
+            />
         </>
     );
 };
