@@ -1,10 +1,11 @@
 const CardRightItemArticle = props => {
     const {
-        href,
         title,
         timestamp,
         content,
         boardNm = '자유게시판',
+        boardID,
+        articleID,
         comment = 0,
         vote = 0,
         isMainCard = false,
@@ -21,6 +22,8 @@ const CardRightItemArticle = props => {
     const showStatus = props.comment !== undefined && props.vote !== undefined;
 
     // TODO :: timestamp formatter 적용해야함. (ex. 하루 전)
+
+    const href = `/board/${boardID}/v/${articleID}`;
 
     return (
         <a class='article' href={href}>
@@ -49,9 +52,11 @@ const CardRightItemArticle = props => {
 };
 
 const CardRightItemList = props => {
-    const { link, timestamp, content } = props;
+    const { path, boardID, articleID, timestamp, content } = props;
 
     // TODO :: timestamp formatter 필요
+
+    const link = `${path}/${boardID}/v/${articleID}`;
 
     return (
         <a class='list' href={link}>
