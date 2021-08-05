@@ -3,6 +3,11 @@
 해당 프로젝트는 단순 프로젝트용으로 "EveryTime"을 클론코딩 한 것입니다.
 
 ## TODO
+- (~8.6) Dummy 분리
+- (~8.6) Directory 일부 정리 (Component)
+- (~8.6) Hook 추가
+
+
 - ~~CSS -> SCSS~~
 - SCSS 페이지별 분리
 - Fetching Hook 구현
