@@ -423,3 +423,17 @@
 //     </a>
 //     <div className='comments'></div>
 // </article>
+
+// // ARTICLE
+// {
+//     "boardID": 0,
+//     "articleID": 0,
+//     "title": "",
+//     "content": "",
+//     "timestamp": 0,
+//     "vote": 0,
+//     "isAnony": true,
+//     "writer": "",
+//     "password": "",
+//     "isDel": false
+// }

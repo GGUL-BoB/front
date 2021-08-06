@@ -1,14 +1,12 @@
-import { useState } from 'react';
 import Articles from './Articles';
 import BoardTitle from './BoardTitle';
 import OneArticle from './OneArticle';
-import '@Styles/container/article.scss';
 import { Route } from 'react-router-dom';
 
-const BoardBodySection = ({ match }) => {
-    // TODO : switch to Router form
-    // TODO : 게시판 이름 매개변수
+// Styles
+import '@Styles/container/article.scss';
 
+const BoardBodySection = ({ match }) => {
     const boardTitle = '자유게시판';
 
     return (

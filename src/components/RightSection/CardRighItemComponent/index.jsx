@@ -1,15 +1,7 @@
 const CardRightItemArticle = props => {
-    const {
-        title,
-        timestamp,
-        content,
-        boardNm = '자유게시판',
-        boardID,
-        articleID,
-        comment = 0,
-        vote = 0,
-        isMainCard = false,
-    } = props;
+    const { title, timestamp, content, boardID, articleID, comment = 0, vote = 0, isMainCard = false } = props;
+
+    const boardNm = '자유게시판';
 
     const newLineFormattedString = content.split('\\n').map(line => (
         <>
@@ -17,6 +9,7 @@ const CardRightItemArticle = props => {
             <br />
         </>
     ));
+
     // TODO :: 이거 function 디렉토리 하위에 종합해두기. (newLineFormatter)
 
     const showStatus = props.comment !== undefined && props.vote !== undefined;
@@ -52,11 +45,11 @@ const CardRightItemArticle = props => {
 };
 
 const CardRightItemList = props => {
-    const { path, boardID, articleID, timestamp, content } = props;
+    const { boardID, articleID, timestamp, content } = props;
 
     // TODO :: timestamp formatter 필요
 
-    const link = `${path}/${boardID}/v/${articleID}`;
+    const link = `/board/${boardID}/v/${articleID}`;
 
     return (
         <a class='list' href={link}>
