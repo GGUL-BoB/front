@@ -72,6 +72,23 @@ export function formatBytes(bytes, decimals = 2) {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 }
 
+export function getBoardName(boardID = -1) {
+    if (boardID === -1) return '존재하지 않는 게시판';
+
+    switch (Number(boardID)) {
+        case 1:
+            return '자유 게시판';
+        case 2:
+            return '비밀 게시판';
+        case 3:
+            return '자료 게시판';
+        case 4:
+            return '트랙 별 게시판';
+        default:
+            return '전체 게시판';
+    }
+}
+
 export const BACK_URL = 'http://localhost:8000';
 export const ARTICLE_ENDPOINT = `${BACK_URL}/api/article`;
 export const BOARD_ENDPOINT = `${BACK_URL}/api/board`;

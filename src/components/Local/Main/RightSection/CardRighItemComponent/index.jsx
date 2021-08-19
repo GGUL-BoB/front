@@ -1,9 +1,20 @@
+import { getFormattedTime } from '@Functions/';
+
 const CardRightItemArticle = props => {
-    const { title, timestamp, content, boardID, articleID, comment = 0, vote = 0, isMainCard = false } = props;
+    const {
+        title,
+        timestamp,
+        content,
+        boardid: boardID,
+        articleid: articleID,
+        comment = 0,
+        vote = 0,
+        isMainCard = false,
+    } = props;
 
     const boardNm = '자유게시판';
 
-    const newLineFormattedString = content.split('\\n').map(line => (
+    const newLineFormattedString = content.split('\n').map(line => (
         <>
             {line}
             <br />
@@ -23,7 +34,7 @@ const CardRightItemArticle = props => {
             {isMainCard ? (
                 <>
                     <p>{newLineFormattedString}</p>
-                    <time>{timestamp}</time>
+                    <time>{getFormattedTime(timestamp)}</time>
                 </>
             ) : (
                 <>
@@ -45,7 +56,7 @@ const CardRightItemArticle = props => {
 };
 
 const CardRightItemList = props => {
-    const { boardID, articleID, timestamp, content } = props;
+    const { boardid: boardID, articleid: articleID, timestamp, content, title } = props;
 
     // TODO :: timestamp formatter 필요
 
@@ -53,8 +64,8 @@ const CardRightItemList = props => {
 
     return (
         <a class='list' href={link}>
-            <time>{timestamp}</time>
-            <p>{content}</p>
+            <time>{getFormattedTime(timestamp)}</time>
+            <p>{title}</p>
             <hr />
         </a>
     );

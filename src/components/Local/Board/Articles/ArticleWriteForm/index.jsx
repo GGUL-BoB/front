@@ -111,7 +111,6 @@ const ArticleWriteForm = props => {
 
         const url = `${ARTICLE_ENDPOINT}/`;
         const isSuccess = await fetchData('post', url, submitData);
-        console.log(isSuccess);
 
         if (isSuccess['msg'] === 'success') {
             await sendAttachedFiles(isSuccess['articleid']);

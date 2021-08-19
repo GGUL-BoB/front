@@ -4,13 +4,16 @@ import { useEffect, useState } from 'react';
 
 // Dummy Data
 import hotArticles from '@Dummy/hotArticles.json';
-import recentArticles from '@Dummy/recentArticles.json';
+// import recentArticles from '@Dummy/recentArticles.json';
+
+import { fetchData } from '@Hooks/';
+import { ARTICLE_ENDPOINT } from '@Functions/';
 
 const RightSection = () => {
     const [hotArticleList, setHotInit] = useState(null);
     const [recentArticleList, setRecentInit] = useState(null);
 
-    const getArticles = (types = '') => {
+    const getArticles = async (types = '') => {
         let items = [];
 
         switch (types.toLowerCase()) {
@@ -21,7 +24,7 @@ const RightSection = () => {
                 break;
             case 'recent':
                 // TODO :: hook - backend와 연동
-                items = recentArticles['data'];
+                items = await fetchData('get', `${ARTICLE_ENDPOINT}`);
                 break;
             default:
                 break;
@@ -31,21 +34,25 @@ const RightSection = () => {
     };
 
     useEffect(() => {
-        const hotArticleComponents = getArticles('hot').map(elem => {
-            return <CardRightItemArticle {...elem} />;
-        });
-        setHotInit(hotArticleComponents);
+        (async () => {
+            let hotArticleComponents = await getArticles('hot');
+            hotArticleComponents = hotArticleComponents.map(elem => {
+                return <CardRightItemArticle {...elem} />;
+            });
+            setHotInit(hotArticleComponents);
 
-        const recentArticlesComponents = getArticles('recent').map(elem => {
-            return <CardRightItemList {...elem} />;
-        });
+            let recentArticlesComponents = await getArticles('recent');
 
-        setRecentInit(recentArticlesComponents);
+            recentArticlesComponents = recentArticlesComponents.slice(0, 4).map(elem => {
+                return <CardRightItemList {...elem} />;
+            });
+            setRecentInit(recentArticlesComponents);
+        })();
     }, []);
 
     return (
         <div class='rightside'>
-            <CardRightComponent title='실시간 인기 글'>{hotArticleList}</CardRightComponent>
+            {/* <CardRightComponent title='실시간 인기 글'>{hotArticleList}</CardRightComponent> */}
 
             <CardRightComponent title='최근 게시물' more='/board'>
                 {recentArticleList}

@@ -1,13 +1,15 @@
 import useSWR from 'swr';
 import BoardArticleComponent from './BoardArticleComponent';
 
-import { getFormattedTime, ARTICLE_ENDPOINT } from '@Functions/';
+import { getFormattedTime, BOARD_ENDPOINT } from '@Functions/';
+import { ARTICLE_ENDPOINT } from '@Functions/';
 
 const ArticleList = props => {
-    const { bid } = props;
+    const { boardID, isAll } = props;
 
-    // TODO :: backend 보드별 엔드포인트 만들어야함.
-    const { data: articleList } = useSWR(`${ARTICLE_ENDPOINT}`);
+    const ENDPOINT = isAll ? `${ARTICLE_ENDPOINT}` : `${BOARD_ENDPOINT}/${boardID}/`;
+
+    const { data: articleList } = useSWR(ENDPOINT);
 
     const handleArticleList = () => {
         if (!articleList) return [];
@@ -26,6 +28,7 @@ const ArticleList = props => {
                 fileCount: data.filecount,
                 imageCount: data.imagecount,
                 thumbnail: data.thumbnail,
+                articleType: isAll ? 2 : 1,
             };
         });
 

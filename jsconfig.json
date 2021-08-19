@@ -7,7 +7,8 @@
             "@Components/*": ["./src/components"],
             "@Dummy/*": ["./src/dummy/*"],
             "@Functions/*": ["./src/functions/*"],
-            "@Hooks/*": ["./src/hooks/*"]
+            "@Hooks/*": ["./src/hooks/*"],
+            "@Store/*": ["./src/store/*"]
         }
     }
 }
