@@ -1,4 +1,4 @@
-## GB-Frontend-docker
+## BOBryTime Frontend
 
 밥브리타임 React로 Front-end 구현하기 😉
 
@@ -12,11 +12,18 @@
 -   [x] RESTful API로 데이터 Fetch
 -   [x] Back-end와의 동기화
 
+#### 추가로 구현하면 좋을법한 기능들
+
+-   [ ] 회원가입/로그인 기능
+-   [ ] 유저정보 수정
+-   [ ] 공감/비공감 기능
+-   [ ] 글쓴이 구별 기능, 댓쓴이 구별기능
+
 ### 사용 방법
 
 ```sh
-$ git clone https://github.com/VYWL/GB-Frontend-docker
-$ cd GB-Frontend-docker
+$ git clone https://github.com/GGUL-BOB/front
+$ cd front
 $ npm install
 $ npm run build --silent
 $ sudo docker build -f Dockerfile -t bobrytime-front .
